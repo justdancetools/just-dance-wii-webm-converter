@@ -1,0 +1,2 @@
+@echo off
+ffmpeg.exe -i input.webm -threads:v 4 -sws_flags bicubic -codec:v libvpx  -r:v 25  -b:v 1000k -bufsize 1000k -g 120 -rc_lookahead 16 -profile:v 1 -qmax 51 -qmin 11 -slices 4 -an -vol 0 -b:v 1000k  -aspect 16:9 -b:v 500k -filter:v scale=512:384 output.wii.webm
